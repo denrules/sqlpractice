@@ -198,5 +198,13 @@ def inTask3():
     cursor.execute("SELECT * FROM workers WHERE Id IN(1, 2, 3, 7, 9) AND Name IN ('user', 'admin', 'ivan') AND salary > 300")
     print(cursor.fetchall())
 
-inTask3()
+def betweenTask1():
+    cursor.execute('SELECT * FROM workers WHERE salary BETWEEN 100 AND 1000')
+    print(cursor.fetchall())
+
+def betweenTask2():
+    cursor.execute('SELECT * FROM workers WHERE Id BETWEEN 3 AND 10 AND salary BETWEEN 300 AND 500')
+    print(cursor.fetchall())
+
+betweenTask2()
 con.commit()
