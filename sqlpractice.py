@@ -186,5 +186,17 @@ def updateTask4():
 def updateTask5():
     cursor.execute("UPDATE workers SET Name = 'Женя', salary = 900 WHERE Name == 'Вася'")
 
-updateTask5()
+def inTask1():
+    cursor.execute("SELECT * FROM workers WHERE Id IN (1, 2, 3, 5, 14)")
+    print(cursor.fetchall())
+
+def inTask2():
+    cursor.execute("SELECT * FROM workers WHERE Name IN ('eee', 'bbb', 'zzz')")
+    print(cursor.fetchall())
+
+def inTask3():
+    cursor.execute("SELECT * FROM workers WHERE Id IN(1, 2, 3, 7, 9) AND Name IN ('user', 'admin', 'ivan') AND salary > 300")
+    print(cursor.fetchall())
+
+inTask3()
 con.commit()
