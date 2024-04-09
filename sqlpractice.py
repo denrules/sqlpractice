@@ -218,5 +218,13 @@ def distinctTask2():
     cursor.execute('SELECT DISTINCT age FROM workers')
     print(cursor.fetchall())
 
-distinctTask2()
+def minMaxTask1():
+    cursor.execute('SELECT MIN(salary) FROM workers')
+    print(cursor.fetchall())
+
+def minMaxTask2():
+    cursor.execute('SELECT MAX(salary) FROM workers')
+    print(cursor.fetchall())
+
+minMaxTask2()
 con.commit()
