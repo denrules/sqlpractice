@@ -171,5 +171,20 @@ def deleteTask2():
 def deleteTask3():
     cursor.execute("DELETE FROM workers WHERE age == 23")
 
-deleteTask3()
+def updateTask1():
+    cursor.execute("UPDATE workers SET salary = 300 WHERE Name == 'Вася'")
+
+def updateTask2():
+    cursor.execute("UPDATE workers SET age = 35 WHERE Id == 4")
+
+def updateTask3():
+    cursor.execute("UPDATE workers SET salary = 700 WHERE salary == 500")
+
+def updateTask4():
+    cursor.execute("UPDATE workers SET age = 23 WHERE Id >= 2 AND Id <= 5")
+
+def updateTask5():
+    cursor.execute("UPDATE workers SET Name = 'Женя', salary = 900 WHERE Name == 'Вася'")
+
+updateTask5()
 con.commit()
