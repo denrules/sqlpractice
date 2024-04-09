@@ -159,6 +159,17 @@ def insertTask3():
     print(cursor.fetchall())
     cursor.execute("DELETE FROM workers WHERE id > 13")
 
+def deleteTask1():
+    cursor.execute('DELETE FROM workers WHERE id == 7')
+    cursor.execute('SELECT * FROM workers')
+    print(cursor.fetchall())
+    cursor.execute("INSERT INTO workers (id, Name, age, salary) VALUES (7, 'Эльзахон', 17, 2000)")
 
-insertTask3()
+def deleteTask2():
+    cursor.execute("DELETE FROM workers WHERE Name == 'Коля'")
+
+def deleteTask3():
+    cursor.execute("DELETE FROM workers WHERE age == 23")
+
+deleteTask3()
 con.commit()
