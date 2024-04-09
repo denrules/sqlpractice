@@ -226,5 +226,17 @@ def minMaxTask2():
     cursor.execute('SELECT MAX(salary) FROM workers')
     print(cursor.fetchall())
 
-minMaxTask2()
+def sumTask1():
+    cursor.execute('SELECT SUM(salary) FROM workers')
+    print(cursor.fetchall())
+
+def sumTask2():
+    cursor.execute('SELECT SUM(salary) FROM workers WHERE age >= 21 AND age <= 25')
+    print(cursor.fetchall())
+
+def sumTask3():
+    cursor.execute('SELECT SUM(salary) FROM workers WHERE Id IN (1, 2, 3, 5)')
+    print(cursor.fetchall())
+
+sumTask3()
 con.commit()
