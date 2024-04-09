@@ -206,5 +206,9 @@ def betweenTask2():
     cursor.execute('SELECT * FROM workers WHERE Id BETWEEN 3 AND 10 AND salary BETWEEN 300 AND 500')
     print(cursor.fetchall())
 
-betweenTask2()
+def asTask1():
+    cursor.execute('SELECT Id AS userId, Name AS userName, salary AS userSalary FROM workers ')
+    print(cursor.fetchall())
+
+asTask1()
 con.commit()
