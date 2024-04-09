@@ -238,5 +238,13 @@ def sumTask3():
     cursor.execute('SELECT SUM(salary) FROM workers WHERE Id IN (1, 2, 3, 5)')
     print(cursor.fetchall())
 
-sumTask3()
+def avgTask1():
+    cursor.execute('SELECT AVG(salary) FROM workers')
+    print(cursor.fetchall())
+
+def avgTask2():
+    cursor.execute('SELECT AVG(age) FROM workers')
+    print(cursor.fetchall())
+
+avgTask2()
 con.commit()
