@@ -210,5 +210,13 @@ def asTask1():
     cursor.execute('SELECT Id AS userId, Name AS userName, salary AS userSalary FROM workers ')
     print(cursor.fetchall())
 
-asTask1()
+def distinctTask1():
+    cursor.execute('SELECT DISTINCT salary FROM workers')
+    print(cursor.fetchall())
+
+def distinctTask2():
+    cursor.execute('SELECT DISTINCT age FROM workers')
+    print(cursor.fetchall())
+
+distinctTask2()
 con.commit()
