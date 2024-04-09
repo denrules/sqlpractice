@@ -109,5 +109,37 @@ def selectTask8():
     cursor.execute("SELECT age, salary FROM workers WHERE Name == 'Вася'")
     print(cursor.fetchall())
 
-selectTask8()
+def orAndTask1():
+    cursor.execute("SELECT * FROM workers WHERE age > 25 AND age <= 28")
+    print(cursor.fetchall())
+
+def orAndTask2():
+    cursor.execute("SELECT * FROM workers WHERE Name == 'Аделинаджон'")
+    print(cursor.fetchall())
+
+def orAndTask3():
+    cursor.execute("SELECT * FROM workers WHERE Name == 'Анюша' OR Name == 'Настюша (Шеф)'")
+    print(cursor.fetchall())
+
+def orAndTask4():
+    cursor.execute("SELECT * FROM workers WHERE Name != 'Луизахон'")
+    print(cursor.fetchall())
+
+def orAndTask5():
+    cursor.execute("SELECT * FROM workers WHERE age == 27 OR salary == 1000")
+    print(cursor.fetchall())
+
+def orAndTask6():
+    cursor.execute("SELECT * FROM workers WHERE (age >= 23 AND age < 27) OR salary == 1000")
+    print(cursor.fetchall())
+
+def orAndTask7():
+    cursor.execute("SELECT * FROM workers WHERE (age >= 23 AND age <= 27) OR (salary >= 400 AND salary <= 1000)")
+    print(cursor.fetchall())
+
+def orAndTask8():
+    cursor.execute("SELECT * FROM workers WHERE age == 27 OR salary != 400")
+    print(cursor.fetchall())
+
+orAndTask8()
 con.commit()
