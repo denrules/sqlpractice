@@ -141,5 +141,24 @@ def orAndTask8():
     cursor.execute("SELECT * FROM workers WHERE age == 27 OR salary != 400")
     print(cursor.fetchall())
 
-orAndTask8()
+def insertTask1():
+    cursor.execute("INSERT INTO workers (Name, age, salary) VALUES('Никита', 26, 300)")
+    cursor.execute("SELECT * FROM workers")
+    print(cursor.fetchall())
+    cursor.execute("DELETE FROM workers WHERE id > 13")
+
+def insertTask2():
+    cursor.execute("INSERT INTO workers (Name, salary) VALUES('Светлана', 1200)")
+    cursor.execute("SELECT * FROM workers")
+    print(cursor.fetchall())
+    cursor.execute("DELETE FROM workers WHERE id > 13")
+
+def insertTask3():
+    cursor.execute("INSERT INTO workers (Name, age, salary) VALUES ('Ярослав', 30, 1200), ('Петр', 31, 1000)")
+    cursor.execute("SELECT * FROM workers")
+    print(cursor.fetchall())
+    cursor.execute("DELETE FROM workers WHERE id > 13")
+
+
+insertTask3()
 con.commit()
